@@ -4,5 +4,5 @@ from django.http import HttpResponse
 # Create your views here.
 
 
-def my_massage(request):
-    return HttpResponse("Hello, Blog!")
+def home(request):
+    return render(request, 'base.html')

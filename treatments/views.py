@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Massage
 
 # Create your views here.
 
 
 def home(request):
-    return render(request, 'base.html')
+    massages = Massage.objects.all()
+    return render(request, 'treatments/home.html', {'massages': massages})

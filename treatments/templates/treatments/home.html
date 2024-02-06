@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for massage in massages %}
+        <div class="col">
+            <div class="card">
+                <!-- Using a static placeholder image for all massage services -->
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Massage Service">
+                <div class="card-body">
+                    <h5 class="card-title">{{ massage.name }}</h5>
+                    <p class="card-text">{{ massage.description }}</p>
+                    <!-- A placeholder for a future detail or booking link -->
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

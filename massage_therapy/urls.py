@@ -21,5 +21,6 @@ from treatments.views import home
 urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
+    path('booking/', include('booking.urls')),
     path('', home, name='home'),
 ]

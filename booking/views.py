@@ -40,3 +40,9 @@ def get_available_time_slots(request):
         return JsonResponse({'message': 'Fully booked', 'available_slots': []})
     else:
         return JsonResponse({'available_slots': available_slots})
+
+
+@login_required
+def user_info(request):
+    user_bookings = Booking.objects.filter(user=request.user).order_by('date', 'time_slot')
+    return render(request, 'booking/user_info.html', {'bookings': user_bookings})

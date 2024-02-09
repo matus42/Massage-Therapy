@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     const dateField = document.querySelector("input[name='date']");
     const timeSlotField = document.querySelector("select[name='time_slot']");
+    const today = new Date().toISOString().split('T')[0];
+    dateField.setAttribute('min', today);
 
     function updateTimeSlots() {
         const selectedDate = dateField.value;

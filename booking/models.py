@@ -13,11 +13,20 @@ TIME_CHOICES = [
 ]
 
 
+STATUS_CHOICES = [
+    ('pending', 'Pending Approval'),
+    ('approved', 'Approved'),
+    ('rejected', 'Rejected'),
+]
+
+
 class Booking(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE)
     massage = models.ForeignKey(Massage, on_delete=models.CASCADE)
     date = models.DateField()
     time_slot = models.CharField(max_length=10, choices=TIME_CHOICES)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
 
     def __str__(self):
         return f"{self.user.username}'s booking for {self.massage.name} on {self.date} at {self.time_slot}"

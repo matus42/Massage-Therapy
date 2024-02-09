@@ -6,10 +6,10 @@ from treatments.models import Massage
 
 
 TIME_CHOICES = [
-    ('9AM-10AM', '9AM-10AM'), ('10AM-11AM', '10AM-11AM'),
-    ('11AM-12PM', '11AM-12PM'), ('1PM-2PM', '1PM-2PM'),
-    ('2PM-3PM', '2PM-3PM'), ('3PM-4PM', '3PM-4PM'),
-    ('4PM-5PM', '4PM-5PM'),
+    ('9am-10am', '9am-10am'), ('10am-11am', '10am-11am'),
+    ('11am-12pm', '11am-12pm'), ('1pm-2pm', '1pm-2pm'),
+    ('2pm-3pm', '2pm-3pm'), ('3pm-4pm', '3pm-4pm'),
+    ('4pm-5pm', '4pm-5pm'),
 ]
 
 

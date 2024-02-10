@@ -49,6 +49,7 @@ def edit_booking(request, booking_id):
     if request.method == 'POST':
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
+            booking.status = 'pending'
             form.save()
             return redirect('user_info')  # Redirect to user bookings page
     else:

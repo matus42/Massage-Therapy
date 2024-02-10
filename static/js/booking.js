@@ -4,12 +4,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const today = new Date().toISOString().split('T')[0];
     dateField.setAttribute('min', today);
 
+    // Function to fetch and update time slots based on the selected date
     function updateTimeSlots() {
         const selectedDate = dateField.value;
         fetch(`/booking/get_available_time_slots/?date=${selectedDate}`)
             .then(response => response.json())
             .then(data => {
-                timeSlotField.innerHTML = ''; // Clear existing options
+                // Clear existing options
+                timeSlotField.innerHTML = '';
 
                 // Check if there's a message indicating that no slots are available
                 if (data.message && data.message === 'Fully booked') {
@@ -39,5 +41,9 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     }
 
+    // Call updateTimeSlots function when the date field value changes
     dateField.addEventListener("change", updateTimeSlots);
+
+    // Trigger initial update of time slots when the page loads
+    updateTimeSlots();
 });

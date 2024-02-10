@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .forms import BookingForm
 from django.contrib.auth.decorators import login_required
@@ -42,6 +42,18 @@ def get_available_time_slots(request):
         return JsonResponse({'message': 'Fully booked', 'available_slots': []})
     else:
         return JsonResponse({'available_slots': available_slots})
+
+
+def edit_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            return redirect('user_info')  # Redirect to user bookings page
+    else:
+        form = BookingForm(instance=booking)
+    return render(request, 'booking/edit_booking.html', {'form': form})
 
 
 @login_required

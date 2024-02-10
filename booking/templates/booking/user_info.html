@@ -14,7 +14,7 @@
             <p class="card-text">Time: {{ booking.time_slot }}</p>
             <p class="card-text">Status: {{ booking.status }}</p>
             <!-- Placeholder for Edit/Delete buttons -->
-            <button class="btn btn-primary" disabled>Edit</button>
+            <a href="{% url 'edit_booking' booking.id %}" class="btn btn-primary">Edit</a>
             <button class="btn btn-danger" disabled>Delete</button>
         </div>
     </div>

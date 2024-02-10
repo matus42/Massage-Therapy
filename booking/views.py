@@ -58,6 +58,18 @@ def edit_booking(request, booking_id):
 
 
 @login_required
+def delete_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    if request.user == booking.user:
+        booking.delete()
+        messages.success(request, 'Booking successfully deleted.')
+    else:
+        messages.error(request, 'You do not have permission to delete this booking.')
+    return redirect('user_info')
+
+
+
+@login_required
 def user_info(request):
     user_bookings = Booking.objects.filter(
         user=request.user).order_by('date', 'time_slot')

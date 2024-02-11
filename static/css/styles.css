@@ -1,14 +1,22 @@
-/* .card {
-    height: 500px; 
-    width: 100%; 
-    margin-bottom: 20px; 
+.navbar {
+  background-color: #f8f9fa; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
-.card-img-top {
-    width: 100%; 
-    height: 280px; 
-    object-fit: cover; 
-} */
+.navbar-brand {
+  font-weight: 700; 
+  color: #202525 !important; 
+}
+
+.nav-link {
+  margin-right: 0.5rem;
+  color: #202525 !important; 
+}
+
+.nav-link:hover {
+  color: #285e4c !important; 
+}
+
 
 
 

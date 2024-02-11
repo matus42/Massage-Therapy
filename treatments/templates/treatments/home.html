@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 
 <div class="container mt-4">
@@ -6,12 +7,18 @@
         {% for massage in massages %}
         <div class="col">
             <div class="card">
-                <!-- Using a static placeholder image for all massage services -->
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Massage Service">
+                <div class="image-container">
+                    <!-- Check if featured_image is set to 'placeholder' or a similar condition -->
+                    {% if massage.featured_image and not 'placeholder' in massage.featured_image.url %}
+                        <img class="card-img-top" src="{{ massage.featured_image.url }}" alt="{{ massage.name }}">
+                    {% else %}
+                        <img class="card-img-top" src="{% static 'images/rocks.webp' %}" alt="Default Massage Service">
+                    {% endif %}
+                </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ massage.name }}</h5>
                     <p class="card-text">{{ massage.description }}</p>
-                    <!-- A placeholder for a future detail or booking link -->
+                    <!-- Link for more details (ensure you have the correct URL pattern) -->
                     <a href="#" class="btn btn-primary">Learn More</a>
                 </div>
             </div>

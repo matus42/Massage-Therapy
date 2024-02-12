@@ -7,4 +7,5 @@ urlpatterns = [
     path('get_available_time_slots/', get_available_time_slots, name='get_available_time_slots'),
     path('user_info/', user_info, name='user_info'),
     path('', book_appointment, name='book_appointment'),
+    path('book/<int:massage_id>/', book_appointment, name='book_for_massage'),
 ]

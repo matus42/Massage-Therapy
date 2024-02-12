@@ -10,7 +10,7 @@ from .models import Booking
 
 # Decorator to check if the user is logged in
 @login_required(login_url='/accounts/login/')
-def book_appointment(request):
+def book_appointment(request, massage_id=None):
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():

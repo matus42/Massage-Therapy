@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card">
+        <img class="card-img-top" src="{{ massage.featured_image.url }}" alt="{{ massage.name }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ massage.name }}</h5>
+            <p class="card-text"><strong>Description:</strong> {{ massage.description }}</p>
+            <p class="card-text">{{ massage.details }}</p>
+            <p class="card-text"><strong>Duration:</strong> {{ massage.duration }} minutes</p>
+            <p class="card-text"><strong>Price:</strong> €{{ massage.price }}</p>
+            <a href="{% url 'book_for_massage' massage.id %}" class="btn btn-primary">Book Now</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

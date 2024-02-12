@@ -48,10 +48,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function isTimeSlotInFuture(slot, currentHour) {
-        const slotHour = parseInt(slot);
+        const slotHour = parseInt(slot); 
         return slotHour > currentHour;
     }
 
     dateField.addEventListener("change", updateTimeSlots);
-    updateTimeSlots(); 
+    updateTimeSlots();
 });

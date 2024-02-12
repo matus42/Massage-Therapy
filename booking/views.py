@@ -65,7 +65,7 @@ def edit_booking(request, booking_id):
 @login_required
 def delete_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
-    if request.user == booking.user:
+    if request.user.is_superuser or request.user == booking.user:
         booking.delete()
         messages.success(request, 'Booking successfully deleted.')
     else:
@@ -73,9 +73,25 @@ def delete_booking(request, booking_id):
     return redirect('user_info')
 
 
-
 @login_required
 def user_info(request):
-    user_bookings = Booking.objects.filter(
-        user=request.user).order_by('date', 'time_slot')
-    return render(request, 'booking/user_info.html', {'bookings': user_bookings})
+    if request.user.is_superuser:
+        bookings = Booking.objects.all().order_by('-date', '-time_slot')
+    else:
+        bookings = Booking.objects.filter(user=request.user).order_by('-date', '-time_slot')
+
+    return render(request, 'booking/user_info.html', {'bookings': bookings})
+
+
+@login_required
+def change_booking_status(request, booking_id, new_status):
+    if not request.user.is_superuser:
+        messages.error(request, "You are not authorized to perform this action.")
+        return redirect('user_info')
+
+    booking = get_object_or_404(Booking, pk=booking_id)
+    booking.status = new_status
+    booking.save()
+
+    messages.success(request, f"Booking status changed to {new_status}.")
+    return redirect('user_info')

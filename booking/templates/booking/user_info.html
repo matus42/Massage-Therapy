@@ -3,47 +3,56 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-  <div class="container mt-4">
+<div class="container mt-4">
     <h2>Your Bookings</h2>
     {% if messages %}
-      {% for message in messages %}
-        <div class="alert alert-success" role="alert">{{ message }}</div>
-      {% endfor %}
+        {% for message in messages %}
+            <div class="alert alert-success" role="alert">{{ message }}</div>
+        {% endfor %}
     {% endif %}
     {% for booking in bookings %}
-      <div class="card mb-4">
-        <div class="card-header">Booking for {{ booking.date|date:'F d, Y' }}</div>
-        <div class="card-body">
-          <h5 class="card-title">{{ booking.massage.name }}</h5>
-          <p class="card-text">Time: {{ booking.time_slot }}</p>
-          <p class="card-text">Status: {{ booking.status }}</p>
-          <!-- Placeholder for Edit/Delete buttons -->
-          <a href="{% url 'edit_booking' booking.id %}" class="btn btn-primary">Edit</a>
-          <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteBookingModal" onclick="setDeleteLink({{ booking.id }})">Delete</button>
+        <div class="card mb-4">
+            <div class="card-header">Booking for {{ booking.date|date:'F d, Y' }}</div>
+            <div class="card-body">
+                <h5 class="card-title">{{ booking.massage.name }}</h5>
+                <p class="card-text">Time: {{ booking.time_slot }}</p>
+                <p class="card-text">Status: {{ booking.status }}</p>
+                {% if request.user.is_superuser %}
+                <p class="card-text">User: {{ booking.user.username }}</p>
+                {% endif %}
+                <!-- Edit and Delete functionality for all users -->
+                <a href="{% url 'edit_booking' booking.id %}" class="btn btn-primary">Edit</a>
+                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteBookingModal" onclick="setDeleteLink({{ booking.id }})">Delete</button>
+                {% if request.user.is_superuser %}
+                    <!-- Superuser specific actions: Approve and Reject -->
+                    <a href="{% url 'change_booking_status' booking.id 'approved' %}" class="btn btn-success">Approve</a>
+                    <a href="{% url 'change_booking_status' booking.id 'rejected' %}" class="btn btn-warning">Reject</a>
+                {% endif %}
+            </div>
         </div>
-      </div>
-      {% empty %}
-      <p>You have no upcoming bookings.</p>
+    {% empty %}
+        <p>You have no upcoming bookings.</p>
     {% endfor %}
+    <!-- Modal for delete confirmation -->
     <div class="modal fade" id="deleteBookingModal" tabindex="-1" aria-labelledby="deleteBookingModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="deleteBookingModalLabel">Confirm Delete</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">Are you sure you want to delete this booking?</div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <a href="#" class="btn btn-danger" id="deleteConfirmBtn">Delete</a>
-          </div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteBookingModalLabel">Confirm Delete</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">Are you sure you want to delete this booking?</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="#" class="btn btn-danger" id="deleteConfirmBtn">Delete</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <script>
-    function setDeleteLink(bookingId) {
-      document.getElementById('deleteConfirmBtn').href = '/booking/delete_booking/' + bookingId + '/'
-    }
-  </script>
+</div>
+<script>
+function setDeleteLink(bookingId) {
+    document.getElementById('deleteConfirmBtn').href = '/booking/delete/' + bookingId + '/';
+}
+</script>
 {% endblock %}

@@ -2,50 +2,48 @@ document.addEventListener("DOMContentLoaded", function() {
     const dateField = document.querySelector("input[name='date']");
     const timeSlotField = document.querySelector("select[name='time_slot']");
     const today = new Date().toISOString().split('T')[0];
+
     dateField.setAttribute('min', today);
 
-    // Function to fetch and update time slots based on the selected date
     function updateTimeSlots() {
         const selectedDate = dateField.value;
+        const currentDate = new Date();
+        const currentHour = currentDate.getHours();
 
-        if (selectedDate) { // Only proceed if a date has been selected
-            fetch(`/booking/get_available_time_slots/?date=${selectedDate}`)
-                .then(response => response.json())
-                .then(data => {
-                    timeSlotField.innerHTML = ''; // Clear existing options
+        fetch(`/booking/get_available_time_slots/?date=${selectedDate}`)
+            .then(response => response.json())
+            .then(data => {
+                timeSlotField.innerHTML = ''; // Clear existing options
 
-                    if (data.message && data.message === 'Fully booked') {
-                        const optionElement = document.createElement("option");
-                        optionElement.value = ''; // No specific value
-                        optionElement.text = 'This day is fully booked.'; // Informative text for the user
-                        timeSlotField.appendChild(optionElement);
-                    } else {
-                        data.available_slots.forEach(slot => {
-                            const optionElement = document.createElement("option");
-                            optionElement.value = slot[0]; // Slot value for backend processing
-                            optionElement.text = slot[1]; // Slot text for display to the user
-                            timeSlotField.appendChild(optionElement);
-                        });
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching time slots:', error);
-                    timeSlotField.innerHTML = '';
-                    const optionElement = document.createElement("option");
-                    optionElement.value = '';
-                    optionElement.text = 'Error loading time slots';
-                    timeSlotField.appendChild(optionElement);
-                });
-        } else {
-            timeSlotField.innerHTML = ''; // Clear existing options
-            const optionElement = document.createElement("option");
-            optionElement.value = '';
-            optionElement.text = 'Please select a date'; // Prompt to select a date
-            timeSlotField.appendChild(optionElement);
-        }
+                if (data.message && data.message === 'Fully booked') {
+                    addOption('This day is fully booked.', '');
+                } else {
+                    data.available_slots.forEach(slot => {
+                        // If selectedDate is today, filter out past time slots
+                        if (selectedDate === today && !isTimeSlotInFuture(slot[0], currentHour)) {
+                            return; // Skip adding this time slot
+                        }
+                        addOption(slot[1], slot[0]); // Slot text for display, value for backend
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching time slots:', error);
+                addOption('Error loading time slots', '');
+            });
     }
 
-    // Call updateTimeSlots function when the date field value changes
-    dateField.addEventListener("change", updateTimeSlots);
+    function addOption(text, value) {
+        const optionElement = document.createElement("option");
+        optionElement.text = text;
+        optionElement.value = value;
+        timeSlotField.appendChild(optionElement);
+    }
 
+    function isTimeSlotInFuture(slot, currentHour) {
+        const slotHour = parseInt(slot);
+        return slotHour > currentHour;
+    }
+
+    dateField.addEventListener("change", updateTimeSlots);
 });

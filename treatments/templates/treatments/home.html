@@ -17,7 +17,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ massage.name }}</h5>
-                    <p class="card-text">{{ massage.description }}</p>
+                    <p class="card-text">{{ massage.description|safe }}</p>
                     <a href="{% url 'massage_detail' massage.id %}" class="btn btn-primary">Learn More</a>
                 </div>
             </div>

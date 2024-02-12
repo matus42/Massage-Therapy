@@ -32,8 +32,8 @@ h5 {
   color: #285e4c !important; 
 }
 
-.nav-link.active {
-    color: darkblue !important;
+.active {
+    color: rgb(139, 0, 104) !important;
 }
 
 

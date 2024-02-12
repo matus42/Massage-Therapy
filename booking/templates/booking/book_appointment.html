@@ -5,6 +5,7 @@
 {% block content %}
 <div class="container mt-4">
     <h2>Book a Massage</h2>
+    <p class="weekend">Bookings cannot be made for the current day or on weekends. Please select a future weekday for your booking.</p>
     <form method="post">
         {% csrf_token %}
         {{ form|crispy }}

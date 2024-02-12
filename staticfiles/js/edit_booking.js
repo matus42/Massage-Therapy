@@ -48,12 +48,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function isTimeSlotInFuture(slot, currentHour) {
-        // Implement logic to convert slot string to a comparable hour and compare
-        // Placeholder logic, adapt to your actual time slot format
-        const slotHour = parseInt(slot); // Simplified, adjust this to match your slot format
+        const slotHour = parseInt(slot); 
         return slotHour > currentHour;
     }
 
     dateField.addEventListener("change", updateTimeSlots);
-    updateTimeSlots(); // Also call it on page load to initialize the time slots correctly
+    updateTimeSlots();
 });

@@ -4,25 +4,29 @@ from .forms import BookingForm
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from .models import Booking
+from treatments.models import Massage
 
-# Create your views here.
 
-
-# Decorator to check if the user is logged in
 @login_required(login_url='/accounts/login/')
 def book_appointment(request, massage_id=None):
+    massage = get_object_or_404(Massage, id=massage_id) if massage_id else None
+
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
             booking.user = request.user
+            # Set the massage for the booking if a massage was selected
+            if massage:
+                booking.massage = massage
             booking.save()
-            messages.success(
-                request, 'Your booking has been successfully made!')
+            messages.success(request, 'Your booking has been successfully made!')
             return redirect('book_appointment')
     else:
-        form = BookingForm()
-    return render(request, 'booking/book_appointment.html', {'form': form})
+        # Initialize the form with the selected massage if available
+        form = BookingForm(initial={'massage': massage}) if massage else BookingForm()
+
+    return render(request, 'booking/book_appointment.html', {'form': form, 'massage': massage})
 
 
 def get_available_time_slots(request):

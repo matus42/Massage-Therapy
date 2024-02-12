@@ -15,11 +15,15 @@ class BookingForm(forms.ModelForm):
         }
 
     def __init__(self, *args, **kwargs):
+        massage = kwargs.pop('massage', None)
         super().__init__(*args, **kwargs)
         self.helper = FormHelper(self)
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Book Now'))
         self.fields['date'].input_formats = ('%Y-%m-%d',)
+
+        if massage:
+            self.fields['massage'].initial = massage
 
     def clean_date(self):
         date = self.cleaned_data['date']

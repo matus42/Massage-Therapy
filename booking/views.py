@@ -51,6 +51,7 @@ def edit_booking(request, booking_id):
         if form.is_valid():
             booking.status = 'pending'
             form.save()
+            messages.success(request, 'Your booking has been successfully updated!')
             return redirect('user_info')  # Redirect to user bookings page
     else:
         form = BookingForm(instance=booking)

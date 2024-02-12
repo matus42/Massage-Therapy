@@ -5,6 +5,11 @@
 {% block content %}
   <div class="container mt-4">
     <h2>Your Bookings</h2>
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-success" role="alert">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
     {% for booking in bookings %}
       <div class="card mb-4">
         <div class="card-header">Booking for {{ booking.date|date:'F d, Y' }}</div>
@@ -15,7 +20,6 @@
           <!-- Placeholder for Edit/Delete buttons -->
           <a href="{% url 'edit_booking' booking.id %}" class="btn btn-primary">Edit</a>
           <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteBookingModal" onclick="setDeleteLink({{ booking.id }})">Delete</button>
-
         </div>
       </div>
       {% empty %}
@@ -39,7 +43,7 @@
   </div>
   <script>
     function setDeleteLink(bookingId) {
-        document.getElementById('deleteConfirmBtn').href = '/booking/delete_booking/' + bookingId + '/';
+      document.getElementById('deleteConfirmBtn').href = '/booking/delete_booking/' + bookingId + '/'
     }
   </script>
 {% endblock %}

@@ -57,26 +57,25 @@
 
     <main class="flex-shrink-0 main-bg">
       {% if user.is_authenticated %}
-        <p class="text-end m-3">You are logged in as {{ user }}</p>
-      {% else %}
-        <p class="text-end m-3">You are not logged in</p>
-      {% endif %}
+      <div class="container mt-4">
+            <p class="d-inline-block mb-0">You are logged in as {{ user.username }}</p>
+          </div>
+          {% endif %}
       {% block content %}
         <!-- Content Goes here -->
       {% endblock %}
     </main>
 
     <!-- Footer -->
-    <footer class="mt-auto py-3 bg-light text-dark">
+    <footer class="mt-auto py-2 bg-light text-dark">
       <div class="container text-center">
         <p>42 Thomas Street, Mitchelstown, P67OG99</p>
         <p>Email: contact@massagetherapy.com | Phone: 089 456 890</p>
         <p>
-          Follow us:
-          <a href="#" class="btn btn-link btn-lg text-dark" role="button" aria-disabled="true"><i class="fab fa-facebook-square fa-lg"></i></a>
-          <a href="#" class="btn btn-link btn-lg text-dark" role="button" aria-disabled="true"><i class="fab fa-twitter-square fa-lg"></i></a>
-          <a href="#" class="btn btn-link btn-lg text-dark" role="button" aria-disabled="true"><i class="fab fa-instagram-square fa-lg"></i></a>
-          <a href="#" class="btn btn-link btn-lg text-dark" role="button" aria-disabled="true"><i class="fab fa-youtube-square fa-lg"></i></a>
+          <a href="#" class="btn btn-link btn-md text-dark" role="button" aria-disabled="true"><i class="fab fa-facebook-square fa-lg"></i></a>
+          <a href="#" class="btn btn-link btn-md text-dark" role="button" aria-disabled="true"><i class="fab fa-twitter-square fa-lg"></i></a>
+          <a href="#" class="btn btn-link btn-md text-dark" role="button" aria-disabled="true"><i class="fab fa-instagram-square fa-lg"></i></a>
+          <a href="#" class="btn btn-link btn-md text-dark" role="button" aria-disabled="true"><i class="fab fa-youtube-square fa-lg"></i></a>
         </p>
       </div>
     </footer>

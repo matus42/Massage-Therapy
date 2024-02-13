@@ -8,8 +8,8 @@ h5 {
 }
 
 .custom-card {
-    max-width: 940px; /* Example max-width */
-    margin: auto; /* Centers the card in the column */
+    max-width: 940px;
+    margin: auto; 
 }
 
 

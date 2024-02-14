@@ -8,4 +8,3 @@ class AboutPageAdmin(SummernoteModelAdmin):
 
 
 admin.site.register(AboutPage, AboutPageAdmin)
-# Register your models here.

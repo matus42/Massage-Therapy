@@ -5,6 +5,7 @@
   <head>
     <title>Massage Therapy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Discover expert massage therapy services for relaxation and healing at our clinic. Book your appointment today to experience personalized care tailored to your wellness needs." />
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}" />
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -44,14 +45,14 @@
                 <a class="nav-link {% if request.resolver_match.url_name == 'account_signup' %}active{% endif %}" href="{% url 'account_signup' %}">Register</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {% if request.resolver_match.url_name == 'account_login' %}active{% endif %}" href="{% url 'account_login' %}">Login</a>
+                <a class="nav-link {% if request.resolver_match.url_name == 'account_login' %}{% endif %}" href="{% url 'account_login' %}">Login</a>
               </li>
             {% endif %}
           </ul>
         </div>
       </div>
     </nav>
-
+    <!-- main section -->
     <main class="flex-shrink-0 main-bg">
       {% if user.is_authenticated %}
         <div class="container mt-4">
@@ -69,10 +70,10 @@
         <p>42 Thomas Street, Mitchelstown, P67OG99</p>
         <p>Email: contact@massagetherapy.com | Phone: 085 8266 876</p>
         <p>
-          <a href="https://www.facebook.com" class="btn btn-link btn-md text-dark" role="button" aria-disabled="true" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
-          <a href="https://www.twitter.com" class="btn btn-link btn-md text-dark" role="button" aria-disabled="true" target="_blank"><i class="fab fa-twitter-square fa-lg"></i></a>
-          <a href="https://www.instagram.com" class="btn btn-link btn-md text-dark" role="button" aria-disabled="true" target="_blank"><i class="fab fa-instagram-square fa-lg"></i></a>
-          <a href="https://www.youtube.com" class="btn btn-link btn-md text-dark" role="button" aria-disabled="true" target="_blank"><i class="fab fa-youtube-square fa-lg"></i></a>
+          <a href="https://www.facebook.com" class="btn btn-link btn-md text-dark" role="button" aria-label="opens new page with facebook" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
+          <a href="https://www.twitter.com" class="btn btn-link btn-md text-dark" role="button" aria-label="opens new page with twitter" target="_blank"><i class="fab fa-twitter-square fa-lg"></i></a>
+          <a href="https://www.instagram.com" class="btn btn-link btn-md text-dark" role="button" aria-label="opens new page with instagram" target="_blank"><i class="fab fa-instagram-square fa-lg"></i></a>
+          <a href="https://www.youtube.com" class="btn btn-link btn-md text-dark" role="button" aria-label="opens new page with youtube" target="_blank"><i class="fab fa-youtube-square fa-lg"></i></a>
         </p>
       </div>
     </footer>

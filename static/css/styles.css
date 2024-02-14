@@ -1,18 +1,14 @@
 body {
     font-family: 'Roboto', sans-serif;
-    color: #212529;
+    color: #070808;
 }
 
 h5 {
-    font-weight: 900; /* Adjust as needed */
-}
-
-.custom-card {
-    max-width: 940px;
-    margin: auto; 
+    font-weight: 900; 
 }
 
 
+/* navbar styling */
 .navbar {
   background-color: #f8f9fa; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
@@ -36,8 +32,14 @@ h5 {
     color: rgb(139, 0, 104) !important;
 }
 
+/* information text on card styling */
 .weekend {
     color: rgb(22, 13, 13);
+}
+
+.custom-card {
+  max-width: 940px;
+  margin: auto; 
 }
 
 

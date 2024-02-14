@@ -1,39 +1,48 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **Table Of Contents**
+1 [**Massage Therapy Services Introduction**](#massage-therapy-services-introduction)
 
-Welcome,
+2 [**Planning Phase**](#planning-phase)
+  * [**Strategy**](#strategy)
+    * [**Service Aims:**](#service-aims)
+    * [**Opportunities:**](#opportunities)
+  * [**Scope**](#scope)
+  * [**Structure**](#structure)
+    * [**Client Stories:**](#client-stories)
+    * [**Features Dropped as Part of the Agile Process**](#features-dropped-as-part-of-the-agile-process)
+  * [**Skeleton**](#skeleton)
+    * [**User Flow Diagrams:**](#user-flow-diagrams)
+    * [**Database Schema**](#database-schema)
+  * [**Surface**](#surface)
+    * [**Color Scheme:**](#color-scheme)
+    * [**Typography**:](#typography)
+      * [**Main Fonts Used:**](#main-fonts-used)
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+3 [**Agile Development Process**](#agile-development-process)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+4 [**Service Features**](#service-features)
+  * [**Booking System**](#booking-system)
+    * [**Online Booking:**](#online-booking)
+    * [**Appointment Management:**](#appointment-management)
 
-## Codeanywhere Reminders
+5 [**User Experience (UX)**](#user-experience-ux)
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+  * [**Design Philosophy**](#design-philosophy)
+  * [**Accessibility Features**](#accessibility-features)
 
-`python3 -m http.server`
+6 [**Technologies Used**](#technologies-used)
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+  * [**Front-End Technologies:**](#front-end-technologies)
+  * [**Back-End Technologies:**](#back-end-technologies)
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+7 [**Testing Phase**](#testing-phase)
 
-`http_server`
+  * [**Functional Testing:**](#functional-testing)
+  * [**Usability Testing:**](#usability-testing)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+8 [**Deployment**](#deployment)
+  * [**Deployment Steps:**](#deployment-steps)
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+9 [**Future Development**](#future-development)
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+10 [**Credits**](#credits)
+  * [**Acknowledgements:**](#acknowledgements)

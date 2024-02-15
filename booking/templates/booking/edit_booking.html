@@ -4,7 +4,7 @@
 {% block content %}
   <div class="container mt-4">
     <h2>Edit Booking</h2>
-    <p class="weekend">Bookings cannot be made for the current day or on weekends. Please select a future weekday for your booking.</p>
+    <p class="weekend">Please do not book for the current day or on weekends.</p>
     <form method="post">
       {% csrf_token %}
       {{ form|crispy }}

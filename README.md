@@ -15,7 +15,7 @@ Welcome to Massage Therapy, my 4th portfolio project. My goal is simple: make ma
     * [**User Stories:**](#user-stories)
   * [**Skeleton**](#skeleton)
     * [**Wireframes:**](#wireframes)
-    * [**User Flow Diagrams:**](#user-flow-diagrams)
+    * [**User Flow Diagram:**](#user-flow-diagram)
     * [**Database Schema**](#database-schema)
   * [**Surface**](#surface)
     * [**Color Scheme:**](#color-scheme)
@@ -23,15 +23,11 @@ Welcome to Massage Therapy, my 4th portfolio project. My goal is simple: make ma
 
 2 [**Agile Development Process**](#agile-development-process)
 
-3 [**Service Features**](#service-features)
-  * [**Booking System**](#booking-system)
-    * [**Online Booking:**](#online-booking)
-    * [**Appointment Management:**](#appointment-management)
-
+3 [**Features**](#features)
+  
 4 [**User Experience (UX)**](#user-experience-ux)
 
   * [**Design Philosophy**](#design-philosophy)
-  * [**Accessibility Features**](#accessibility-features)
 
 5 [**Technologies Used**](#technologies-used)
 
@@ -255,3 +251,83 @@ Feedback loops were integrated throughout the development process. By presenting
 ### Looking Forward
 Using the Agile method in this project taught me a lot about flexibility and quick adaptation. The Agile approach's benefits are clear and will definitely guide how I work on future projects.
 
+
+## Features
+
+### Home Page
+The first thing you see on our site. It's designed to be welcoming. You can easily find your way around from here.
+
+- **Navigation:** Helps you get around the site without hassle.
+- **Social Media Links:** Check us out on social media through the links in the footer.
+
+![Home Page Screenshot](./documentation/images/features/home_page.png)
+
+### Massage Detail Page
+- When you're curious about a specific massage service, the "Learn More" button takes you here. This page dives into the details of the service, including benefits, duration, and price. It's your go-to for getting to know exactly what each massage offers before making your appointment.
+
+![Massage Detail Screenshot](./documentation/images/features/detail.png)
+
+### About Page
+- Discover more about our skilled therapist on the About Page, where you can learn about his expertise and passion for massage therapy. This section also provides direct contact information, making it easy for you to reach out with any questions or to discuss your specific needs.
+
+![About Screenshot](./documentation/images/features/about.png)
+
+### Booking Page
+- Here's where you book your appointments. If you're logged in, just fill out the form and you're all set. You get confirmation message after you book.
+
+![Booking Screenshot](./documentation/images/features/booking.png)
+
+- You cannot book if the day is fully booked.
+![Booking Screenshot](./documentation/images/features/fully_booked.png)
+
+
+## Manage Appointments: user
+- This is for users to see all their bookings. You can change details or cancel if you need to, keeping you in control of your schedule.
+
+![Manage Appointments Screenshot](./documentation/images/features/manage_booking_user.png)
+
+- If you press edit it brings you to edit booking page with current massage information. After coosing new booking it will brings you back to your bookings where you can see confirmation message. Also if status of booking was "approved" it will change to "pending" after editing.
+![Manage Appointments Screenshot](./documentation/images/features/edit_booking.png)
+![Manage Appointments Screenshot](./documentation/images/features/edit_confirm.png)
+
+- Before you delete an appointment, a confirmation modal appears, asking if you're sure about your decision. This safety feature prevents accidental deletions, ensuring you have a moment to confirm your action.
+![Manage Appointments Screenshot](./documentation/images/features/modal.png)
+
+## Manage Appointments: superuser 
+- When logged in as superuser, you'll get a list of all bookings from all users sorted by date. You can edit, delete, approve status of booking or reject booking. 
+![Superuser Screenshot](./documentation/images/features/superuser.png)
+
+## Navigation Menu
+- Navigation menu inculdes:
+
+- **Home**: Everyone can see this.
+- **About**: Open for all visitors.
+- **Booking**: For users who are logged in.
+- **User Info**: Only visible for logged in users.
+- **Login/Logout/Register**: Depending on whether you're logged in or not.
+
+![navigation Screenshot](./documentation/images/features/navbar.png)
+
+- Footer includes contact information and social links:
+![Superuser Screenshot](./documentation/images/features/footer.png) 
+
+
+## User Experience (UX)
+
+In creating this massage therapy booking platform, I focused on delivering an experience that feels both welcoming and effortless. From the moment you land on the site to the moment you complete a booking, my goal is to ensure you find what you need with minimal fuss.
+
+### Design Philosophy
+My design approach is all about simplicity and functionality. I wanted to make sure that navigating through the platform is intuitive, making wellness accessible to everyone, no matter their tech-savviness.
+
+### Key UX Considerations
+- **Intuitive Navigation:** I made it a priority to organize the site in a way that's easy to understand and use. Finding and booking your next massage should be simple, whether it's your first visit or your hundredth.
+- **Responsive Design:** With Bootstrap's help, I ensured that the site looks great and operates smoothly across all devices. It's important to me that you can book a massage from your phone just as easily as from your desktop.
+- **Accessibility:** I've taken steps to make the website accessible to as many people as possible, following best practices for web accessibility. This is an ongoing effort, and I'm committed to improving it further.
+- **Feedback Loops:** Clear and immediate feedback is crucial. Whether it's confirming your booking or alerting you to a form error, I made sure the website communicates effectively with you at every step.
+
+### Research and Testing
+Early on, I gathered feedback from potential users to understand their needs and preferences. This feedback was invaluable, shaping many of the design choices you see. Usability testing helped refine these ideas, ensuring the platform not only meets but exceeds user expectations.
+
+### Future UX Goals
+I'm always looking for ways to enhance your experience on the platform. Based on user feedback and the latest in UX best practices, I plan to continue evolving the site.
+ 

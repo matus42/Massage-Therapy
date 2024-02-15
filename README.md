@@ -309,7 +309,7 @@ The first thing you see on our site. It's designed to be welcoming. You can easi
 ![navigation Screenshot](./documentation/images/features/navbar.png)
 
 - Footer includes contact information and social links:
-![Superuser Screenshot](./documentation/images/features/footer.png) 
+![footer Screenshot](./documentation/images/features/footer.png) 
 
 
 ## User Experience (UX)
@@ -331,3 +331,38 @@ Early on, I gathered feedback from potential users to understand their needs and
 ### Future UX Goals
 I'm always looking for ways to enhance your experience on the platform. Based on user feedback and the latest in UX best practices, I plan to continue evolving the site.
  
+
+
+## Technologies Used
+
+### Front-End Technologies:
+- **HTML5**: Used for structuring the content and layout of the web pages.
+- **CSS3**: Utilized for styling the web pages, enabling responsive design.
+- **JavaScript**: Employed to add interactivity to the web pages.
+- **Bootstrap 5**: A front-end framework used for creating responsive and mobile-first websites.
+
+### Back-End Technologies:
+- **Django 4.2.9**: The core web framework used for building the project.
+- **Cloudinary**: Integrated for media management, allowing efficient upload, storage, and delivery of images.
+- **PostgreSQL (via psycopg2 2.9.9)**: Selected as the production database.
+- **Gunicorn 20.1.0**: Used as the WSGI HTTP server for deploying the Django application.
+
+### Development and Deployment Tools:
+- **Git**: Used for version control.
+- **GitHub**: Hosts the project repository.
+- **Heroku**: Used for deploying the application.
+- **Whitenoise 6.6.0**: Utilized for serving static files efficiently in conjunction with Django.
+
+### Django Extensions and Utilities:
+- **django-allauth 0.57.0**: Integrated for authentication.
+- **django-crispy-forms 2.1 & crispy-bootstrap5 2023.10**: Used for rendering forms.
+- **django-summernote 0.8.20.0**: Added to provide a rich-text editing experience in admin forms.
+
+### Other Technologies:
+- **FontAwesome**: Used for icons.
+- **favicon.io**: Used to create the favicon.
+- **imageresizer.com**: Used to resize pictures for project.
+- **chatGPT**: Used to generate content foar a site.
+
+
+

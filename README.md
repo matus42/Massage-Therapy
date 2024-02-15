@@ -1,6 +1,10 @@
 # Massage Therapy Introduction
 Welcome to Massage Therapy, my 4th portfolio project. My goal is simple: make massage therapy bookings as easy as a few clicks. Built with Django and  Bootstrap, my site offers a sleek and responsive experience for all users. Whether you're booking your next relaxation session or managing your clients.
 
+![home-page](./documentation/images/wireframes/introduction.png)
+
+[Live Website](https://massage-therapy-fc86f4f7c039.herokuapp.com/)
+
 # **Table Of Contents**
 1 [**Planning Phase**](#planning-phase)
   * [**Strategy**](#strategy)
@@ -100,11 +104,10 @@ The goal is to create a user-friendly, secure, and efficient platform that allow
   - **Acceptance Criteria**:
     - Ability to add, edit, and delete massage types.
     - Each massage type includes picture, name, duration, price, and description.
-    - Changes are immediately reflected on the client interface.
+    - Changes are immediately visible to clients on the booking platform.
 
 - **As a Therapist-Admin, I can set and update my availability, so that clients only book sessions when I am available.**
   - **Acceptance Criteria**:
-    - Can create and modify available time slots.
     - Availability changes update in real-time on the booking system.
     - The system prevents double-booking of time slots.
 
@@ -113,7 +116,6 @@ The goal is to create a user-friendly, secure, and efficient platform that allow
 - **As a Client, I can browse different types of massages, so that I find the service that suits my needs.**
   - **Acceptance Criteria**:
     - View a list of all available massage types with details.
-    - Filter or sort massage options based on preferences.
     - Easy navigation to book selected massage services.
 
 ### Sprint 3: Booking Functionality
@@ -134,7 +136,7 @@ The goal is to create a user-friendly, secure, and efficient platform that allow
   - **Acceptance Criteria**:
     - View upcoming and past appointments.
     - Reschedule or cancel appointments as needed.
-    - Receive notifications for new or changed appointments.
+    - Receive notifications after changing appointments.
 
 ### Sprint 4: Enhancements and User Interface
 
@@ -221,3 +223,35 @@ The goal is to create a user-friendly, secure, and efficient platform that allow
   - Headers (`h5`) are bolded with a weight of `900` for emphasis.
   - The `navbar-brand` has a weight of `700` for a balanced, noticeable presence.
 - **Fallback Font**: Sans-serif. This generic font family ensures the site remains visually appealing and text is readable where Roboto is not available.
+
+
+## Agile Development Process
+
+From the start, I embraced an Agile development approach to bring this massage therapy booking platform to life. Agile's iterative nature allowed me to adapt to changes quickly, incorporate feedback efficiently, and ensure that the project continually moved forward in alignment with user needs and project goals.
+
+### Embracing Agile Principles
+I committed to the core principles of Agile development, focusing on delivering working software frequently, welcoming changing requirements
+
+### Sprints and Iterations
+The project was broken down into several sprints, each with specific goals and deliverables:
+
+- **Sprint 1: Basic Setup and User Authentication** - The foundation was laid, focusing on secure login functionality and basic navigation. 2 days.
+- **Sprint 2: Service and Appointment Models** - Core functionalities were developed, including managing services and setting up appointment models. 3 days.
+- **Sprint 3: Booking Functionality** - Implemented the crucial booking system, allowing users to schedule appointments based on real-time availability. 4 days.
+- **Sprint 4: Enhancements and User Interface** - Finalized the project with a focus on UI/UX improvements, making the interface as user-friendly and responsive as possible. 4 days
+
+- **Overall Reflection on Planned Days**
+Throughout the development process, I aimed to adhere closely to the planned durations for each sprint. While I was generally accurate in my estimations, I learned the importance of flexibility and the value of allocating additional time for debugging and enhancing features based on user feedback. This approach not only improved the quality of the platform but also enriched my development skills and project management capabilities.
+
+### Agile Tools and Practices
+- **Kanban Board:** Initially overwhelmed by the project's scope, I opted for a written plan, believing it would suffice for managing the development process. However, upon completing the project, I recognized the value of visual organization and transferred all user stories to a digital Kanban board. This shift not only helped me reflect on the project's workflow and scope but also became a pivotal tool for planning future enhancements, providing me with a clear, visual overview of the project's achievements.
+- **Daily Standups:** Although working independently, I maintained the discipline of daily standups (with myself), reviewing what was accomplished the previous day and setting goals for the current day.
+- **User Stories:** These were crucial in guiding the development process, ensuring that every feature developed served a direct user need or improved the user experience in a meaningful way.
+- **Retrospectives:** At the end of each sprint, I took time to reflect on what went well, what could be improved, and how to make the next sprint even more productive.
+
+### Continuous Feedback and Adaptation
+Feedback loops were integrated throughout the development process. By presenting working versions of the software to my mentor and friends, I gathered invaluable insights that informed future development decisions and feature improvements.
+
+### Looking Forward
+Using the Agile method in this project taught me a lot about flexibility and quick adaptation. The Agile approach's benefits are clear and will definitely guide how I work on future projects.
+

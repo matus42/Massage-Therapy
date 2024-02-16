@@ -1,3 +1,5 @@
+## Testing Phase
+
 ### Functional Testing
 
 #### User Authentication
@@ -158,5 +160,7 @@ Throughout the development of the Massage Therapy project, several bugs were enc
 10. **Integration of Rich Text Editor**: Summernote widget was not displaying in the admin for text fields.
     - **Resolution**: Added `django-summernote` to `INSTALLED_APPS` and configured its settings in `settings.py`, ensuring the rich text editor was available for applicable fields in the admin.
 
+### BUGS unresolved:
+- Iam not aware of any remaining bugs.
 
 

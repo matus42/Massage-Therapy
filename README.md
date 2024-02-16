@@ -37,7 +37,6 @@ Welcome to Massage Therapy, my 4th portfolio project. My goal is simple: make ma
 6 [**Testing Phase**](#testing-phase)
 
 7 [**Deployment**](#deployment)
-  * [**Deployment Steps:**](#deployment-steps)
 
 8 [**Future Development**](#future-development)
 
@@ -359,12 +358,91 @@ I'm always looking for ways to enhance your experience on the platform. Based on
 - **FontAwesome**: Used for icons.
 - **favicon.io**: Used to create the favicon.
 - **imageresizer.com**: Used to resize pictures for project.
-- **chatGPT**: Used to generate content foar a site.
+- **chatGPT**: Used to generate content for a site.
 
 
 ## Testing Phase
 
 I created separated file for testind [Testing.md](https://github.com/matus42/Massage-Therapy/blob/main/Testing.md).
 
+## Deployment
+
+### Deploy with Heroku
+
+1. Visit the [Heroku website](https://www.heroku.com/). If you already have an account, [log in](https://id.heroku.com/login). If not, [sign up](https://signup.heroku.com/) for a new account.
+2. Once logged in, navigate to your dashboard and click on the "New" button located at the top right corner. From the drop-down, select "Create new App."
+3. Provide a unique name for your app in the "App name" field.
+4. Choose a region closest to you in the "Choose a region" field for better performance.
+5. Click the "Create app" button to proceed.
+6. On the next page, at the top center, click on the "Settings" tab.
+7. Scroll down to the "Config Vars" section and click on the "Reveal Config Vars" button.
+8. Here, you'll enter the environment variables that are stored in your `env.py` file locally. These include:
+   - `CLOUDINARY_API_KEY`
+   - `CLOUDINARY_API_SECRET`
+   - `CLOUDINARY_NAME`
+   - `CLOUDINARY_URL`
+   - `DATABASE_URL`
+   - `SECRET_KEY`
+9. Copy and paste these variables into the KEY field and their respective values into the VALUE field.
+10. Return to the top of the page and select the "Deploy" tab.
+11. In the "Deployment method" section, choose "GitHub" to connect your GitHub repository.
+    1. Use the "Search" button under "Connect to GitHub" to find your project repository, then click "Connect" next to the correct repository.
+    2. At the bottom of the page, click "Deploy Branch" to start the deployment process.
+12. A build log will appear at the bottom of the screen. Upon successful build, a link to your deployed app will be displayed.
+
+**Note:** Ensure your Heroku app link is added to `ALLOWED_HOSTS` in the `settings.py` file of your Django project. Also, set `DEBUG` to `False` for production, and verify that `requirements.txt` and `Procfile` are up to date and committed to your GitHub repository before deploying.
+
+### Steps to Clone the Site
+
+To create a personal copy of the repository on your GitHub account, follow these streamlined steps:
+
+1. Go to the [repository page on GitHub](https://github.com/matus42/Massage-Therapy).
+2. Locate the 'Fork' button at the top right corner of the page and click on it.
+3. A copy of the repository will now be available in your GitHub account, allowing you to make modifications and experiment with the project independently.
 
 
+
+## Future Development
+
+As the Massage Therapy project continues to evolve, there are key areas identified for future development to enhance functionality, user experience, and overall service quality. Below are the planned enhancements:
+
+### Enhanced Availability Management
+To streamline the booking process and offer greater flexibility for both clients and therapists, we plan to introduce a more sophisticated availability management system. This system will allow therapists to dynamically update their available slots in real-time, providing clients with up-to-date options for scheduling their appointments. By implementing this feature, we aim to:
+
+- Minimize booking conflicts and optimize the appointment scheduling process.
+- Enable therapists to easily manage their schedules, accommodating both regular hours and exceptions (such as vacations or special events).
+- Improve the overall efficiency of appointment management, leading to higher satisfaction for both clients and therapists.
+
+### Detailed User Profiles
+Recognizing the importance of personalization in enhancing the user experience, the next phase of development will focus on creating more detailed user profiles. These enriched profiles will serve as a foundation for several new features, including:
+
+- Personalized treatment recommendations based on user preferences and treatment history.
+- The ability to track and visualize progress over time, for both clients and therapists.
+- Enhanced communication tools for therapists to provide feedback or follow-up care instructions to clients.
+
+## Credits
+
+- [Stack overflow](https://stackoverflow.com/questions/48508750/how-to-force-https-in-a-django-project-using-cloudinary) to help with Cloudinary and debugging,
+- [This tutorial by John Abdsho on YouTube](https://www.youtube.com/watch?v=s5xbtuo9pR0&ab_channel=JohnAbdsho) served as a key inspiration for the booking system,
+- The Code Institute's walkthrough project, `I Think Therefore I Blog`, was instrumental in laying the foundational knowledge and skills necessary for developing this project,
+- My mentor, David Bowers, for his unwavering support and guidance throughout the project. His expertise and feedback were pivotal in navigating challenges and refining the project's direction,
+- [Favicon generator](https://favicon.io/) to create my favicon,
+- [chatGBT](https://chat.openai.com/) for generating content for my site and as my personal assistent,
+- [Bootstrap](https://getbootstrap.com/) a powerful front-end framework for faster and easier web development.
+
+
+### Acknowledgements:
+
+I extend my deepest thanks to all who contributed to the success of my fourth project:
+
+- **Code Institute and its Slack community**: Your educational resources and collaborative spirit have been foundational to my learning and project development.
+
+- **Family and Friends**: Your engagement, feedback, and support have been invaluable. Thank you for your patience and encouragement.
+
+- **David Bowes**: As my mentor, your guidance and wisdom have been crucial. Your support has been unwavering, and I am profoundly grateful.
+
+- **John Whitehead**: A special thanks to you for reviewing my project and offering essential improvements. Your expertise has been a great help.
+
+- **My Partner**: Thank you for your understanding and support as I dedicated myself to this project. Your patience means the world to me.
+
+Your collective support has been instrumental in bringing this project to fruition.

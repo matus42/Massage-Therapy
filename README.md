@@ -36,9 +36,6 @@ Welcome to Massage Therapy, my 4th portfolio project. My goal is simple: make ma
 
 6 [**Testing Phase**](#testing-phase)
 
-  * [**Functional Testing:**](#functional-testing)
-  * [**Usability Testing:**](#usability-testing)
-
 7 [**Deployment**](#deployment)
   * [**Deployment Steps:**](#deployment-steps)
 
@@ -363,6 +360,11 @@ I'm always looking for ways to enhance your experience on the platform. Based on
 - **favicon.io**: Used to create the favicon.
 - **imageresizer.com**: Used to resize pictures for project.
 - **chatGPT**: Used to generate content foar a site.
+
+
+## Testing Phase
+
+I created separated file for testind [Testing.md](https://github.com/matus42/Massage-Therapy/blob/main/Testing.md).
 
 
 

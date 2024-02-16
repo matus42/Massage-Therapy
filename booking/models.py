@@ -26,7 +26,9 @@ class Booking(models.Model):
     massage = models.ForeignKey(Massage, on_delete=models.CASCADE)
     date = models.DateField()
     time_slot = models.CharField(max_length=10, choices=TIME_CHOICES)
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES,
+                              default='pending')
 
     def __str__(self):
-        return f"{self.user.username}'s booking for {self.massage.name} on {self.date} at {self.time_slot}"
+        return (f"{self.user.username}'s booking for {self.massage.name} "
+                f"on {self.date} at {self.time_slot}")

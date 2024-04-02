@@ -7,7 +7,7 @@ from .models import Booking
 from treatments.models import Massage
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def book_appointment(request, massage_id=None):
     """
     Book a massage appointment.
@@ -45,6 +45,7 @@ def book_appointment(request, massage_id=None):
                   {'form': form, 'massage': massage})
 
 
+@login_required
 def get_available_time_slots(request):
     """
     Get available booking time slots for a given date.
@@ -74,6 +75,7 @@ def get_available_time_slots(request):
         return JsonResponse({'available_slots': available_slots})
 
 
+@login_required
 def edit_booking(request, booking_id):
     """
     Edit an existing booking.

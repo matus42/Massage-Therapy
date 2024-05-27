@@ -8,8 +8,10 @@
         <img class="card-img-top img-fluid" src="{{ about_content.image.url }}" alt="{{ about_content.name }}">
         {% endif %}
         <div class="card-body">
+            <br>
             <h5 class="card-title">{{ about_content.name }}</h5>
-            <p class="card-text">{{ about_content.description|safe }}</p>
+            <br>
+            <div class="card-text">{{ about_content.description|safe }}</div>
         </div>
     </div>
 </div>

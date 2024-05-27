@@ -9,7 +9,7 @@ from .views import (
 )
 
 urlpatterns = [
-    path('booking/<int:booking_id>/edit/', edit_booking, name='edit_booking'),
+    path('<int:booking_id>/edit/', edit_booking, name='edit_booking'),
     path('delete_booking/<int:booking_id>/', delete_booking,
          name='delete_booking'),
     path('get_available_time_slots/', get_available_time_slots,
